@@ -1,11 +1,11 @@
 import React from "react";
-import Place from "./Place";
-import Search from "./Search";
-import Settings from "./Settings";
+import Place from "./Header/Place";
+import Search from "./Header/Search";
+import Settings from "./Header/Settings";
 
 const Header = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-around">
       <Place />
       <Search />
       <Settings />
