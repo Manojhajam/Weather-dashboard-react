@@ -82,7 +82,7 @@ const CurrentWeather = () => {
   </div>
 
   {/* Other Info */}
-  <div className="p-6 rounded-2xl border border-gray-700 bg-gray-900 w-72 grid grid-cols-3 gap-4 h-full">
+  <div className="p-6 rounded-2xl border border-gray-700 bg-gray-900 w-full grid grid-cols-3 gap-4 h-full">
     {otherInfoWidgets.map(({ id, icon, name, value, unit }) => (
       <div key={id} className="text-center">
         <div className="flex flex-col items-center">
