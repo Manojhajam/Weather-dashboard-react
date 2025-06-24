@@ -7,8 +7,8 @@ const Main = () => {
   const datahourly = hourlyData[0]?.hourly?.data;
   const datadaily = dailyData[0]?.daily?.data; 
 
-  console.log("Hourly Data:", datahourly);
-  console.log("Daily Data:", datadaily);
+  // console.log("Hourly Data:", datahourly);
+  // console.log("Daily Data:", datadaily);
 
   return (
     <div>

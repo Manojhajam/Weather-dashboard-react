@@ -5,7 +5,7 @@ import Icon from "../Icon/icon";
 
 const CurrentWeather = () => {
   const data = weatherData[0]?.data[0];
-  console.log("weatherdata",data)
+  // console.log("weatherdata",data)
   if (!data) return <div className="text-center mt-4 text-red-500">No weather data available</div>;
 
   const {

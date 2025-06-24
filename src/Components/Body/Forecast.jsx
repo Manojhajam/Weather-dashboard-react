@@ -9,7 +9,8 @@ const Forecast = ({ title, type, data }) => {
         </h3>
         <div className="flex gap-4 overflow-x-auto p-4">
           {data.map((singleData, index) => <div key={index}>
-              {type === "hourly" ? <HourlyForecastWidget data={singleData} /> : <DailyforecastWidget data={singleData} />}
+            {type === "hourly" ? <HourlyForecastWidget data={singleData} />
+              : <DailyforecastWidget data={singleData} />}
             </div>)}
         </div>
       </div>
