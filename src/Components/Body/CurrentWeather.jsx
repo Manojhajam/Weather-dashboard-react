@@ -67,9 +67,9 @@ const CurrentWeather = () => {
   ];
 
   return (
-    <div className="flex gap-4 p-6 bg-black items-stretch text-white">
+    <div className="flex gap-4 p-6 items-stretch">
   {/* Weather Overview */}
-  <div className="p-4 rounded-2xl border border-gray-700 bg-gray-900 w-54 text-center h-full flex flex-col justify-center">
+  <div className="p-4 rounded-2xl border border-gray-700 w-54 text-center h-full flex flex-col justify-center">
     {/* <img
       src={`${import.meta.env.VITE_PUBLIC_URL}/dist/weather_icons/set04/big/${icon}.png`}
       alt={summary}
@@ -82,7 +82,7 @@ const CurrentWeather = () => {
   </div>
 
   {/* Other Info */}
-  <div className="p-6 rounded-2xl border border-gray-700 bg-gray-900 w-full grid grid-cols-3 gap-4 h-full">
+  <div className="p-6 rounded-2xl border border-gray-700 w-full grid grid-cols-3 gap-4 h-full">
     {otherInfoWidgets.map(({ id, icon, name, value, unit }) => (
       <div key={id} className="text-center">
         <div className="flex flex-col items-center">
