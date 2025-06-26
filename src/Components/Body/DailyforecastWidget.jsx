@@ -13,7 +13,7 @@ const DailyforecastWidget = dailyData => {
     wind,
     precipitation
   } = data;
-  console.log(data);
+  // console.log(data);
 
   //date format
   const now_date = {
