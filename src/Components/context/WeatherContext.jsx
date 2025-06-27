@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react"
-import { DEFAULT_PLACE } from "../utils";
+import { DEFAULT_PLACE } from "../constants";
 
 import { getWeatherData } from "../../api";
 
