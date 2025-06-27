@@ -1,8 +1,8 @@
 import React from "react";
 import Place from "./Header/Place";
 import Search from "./Header/Search";
-
 // import Settings from "./Header/Settings";
+
 
 
 const Header = () => {
