@@ -1,18 +1,17 @@
 import React from "react";
-import { weatherData } from "../../api/current-weather";
+// import { weatherData } from "../../api/current-weather";
 import Icon from "../Icon/icon";
 
 
-const CurrentWeather = () => {
-  const data = weatherData[0]?.data[0];
-  // console.log("weatherdata",data)
-  if (!data) return <div className="text-center mt-4 text-red-500">No weather data available</div>;
+const CurrentWeather = ({data}) => {
+
+
 
   const {
     cloud_cover,
     feels_like,
     humidity,
-    icon,
+    icon_num,
     summary,
     temperature,
     uv_index,
@@ -75,7 +74,7 @@ const CurrentWeather = () => {
       alt={summary}
       className="mx-auto mb-4 w-16"
     /> */}
-        <Icon iconNo={icon} summary={summary}/>
+        <Icon iconNo={icon_num} summary={summary}/>
     <p className="text-4xl font-semibold">{temperature}°C</p>
     <p className="text-sm text-gray-400 mt-1">feels like {feels_like}°C</p>
     <p className="mt-2 text-gray-300">{summary}</p>
