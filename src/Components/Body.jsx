@@ -1,4 +1,4 @@
-import CurrentWeather from "./Body/currentWeather";
+import CurrentWeather from "./Body/CurrentWeather";
 import Forecast from "./Body/Forecast";
 import { hourlyData } from "../api/hourly-forecast";
 import { dailyData } from "../api/daily-forecast";

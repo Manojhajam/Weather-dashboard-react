@@ -79,11 +79,11 @@ const CurrentWeather = ({data}) => {
         <p className="text-4xl font-semibold">
           {temperature} {units.temperature}
         </p>
-        <p className="text-sm text-gray-400 mt-1">
+        <p className="text-sm mt-1">
           feels like {feels_like}
           {units.temperature}
         </p>
-        <p className="mt-2 text-gray-300">
+        <p className="mt-2 text-gray-800">
           {summary}
         </p>
       </div>

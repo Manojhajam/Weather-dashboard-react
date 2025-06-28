@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 
 
-import { WeatherProvider } from "./Components/context/weatherContext.jsx";
+import { WeatherProvider } from "./Components/context/WeatherContext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <WeatherProvider>
