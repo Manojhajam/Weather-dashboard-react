@@ -4,11 +4,11 @@ import { hourlyData } from "../api/hourly-forecast";
 import { dailyData } from "../api/daily-forecast";
 import { useContext } from "react";
 import Loader from "./Body/Loader";
-import WeatherContext from "./context/weatherContext";
+import WeatherContext from "./context/WeatherContext";
 
 const Main = () => {
-  const datahourly = hourlyData[0]?.hourly?.data;
-  const datadaily = dailyData[0]?.daily?.data; 
+  // const datahourly = hourlyData[0]?.hourly?.data;
+  // const datadaily = dailyData[0]?.daily?.data; 
 
   const { loading, currentWeather, dailyForecast, hourlyForecast } = useContext(WeatherContext);
 

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Icon from "../Icon/icon";
+import WeatherContext from "../context/WeatherContext";
 
 const HourlyForecastWidget = (hourlydata) => {
+  const { units } = useContext(WeatherContext);
   const data = hourlydata.data;
   const { date, icon, summary, temperature, wind, precipitation } = data;
   // console.log("DFW", data);
@@ -39,8 +41,7 @@ const HourlyForecastWidget = (hourlydata) => {
 
 
   return <div className="relative widget flex flex-col items-center justify-between p-4 bg-white  rounded-2xl border border-gray-300 dark:border-gray-700 shadow-md min-w-[120px] mt-2">
-     
-    <div className="day absolute -top-6 bg-white px-2 text-sm font-semibold rounded shadow">
+      <div className="day absolute -top-6 bg-white px-2 text-sm font-semibold rounded shadow">
         {weather_date.day}
       </div>
       <div className="time">
@@ -50,14 +51,15 @@ const HourlyForecastWidget = (hourlydata) => {
         <Icon iconNo={icon} summary={summary} />
       </div>
       <div className="temperature">
-        {Math.round(temperature)}°C
+        {Math.round(temperature)}
+        {units.temperature}
       </div>
       <div className="preciption">
-        {Math.round(precipitation.total)} mm/h
+        {Math.round(precipitation.total)} {units.precipitation}
       </div>
       <div className="wind flex">
         <div className="speed">
-          {Math.round(wind.speed)} mph
+          {Math.round(wind.speed)} {units.wind_speed}
         </div>
         <div className="dir" style={{ transform: `rotate(${-45 + wind.angle}deg)` }}>
           <i className="bi bi-send-fill" />

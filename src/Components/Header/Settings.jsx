@@ -1,9 +1,17 @@
 import { useContext, useState } from "react";
 import { MEASUREMENT_SYSTEMS } from "../constants";
+import WeatherContext from "../context/WeatherContext";
 
 
 const Settings = () => {
-const [openSettings, setOpenSettings] = useState(false)
+  const [openSettings, setOpenSettings] = useState(false)
+  
+  const { measurementSystem, setMeasurementSystem } = useContext(WeatherContext);
+  
+  const changeMeasurementSystem = (system) => {
+    setMeasurementSystem(system);
+    setOpenSettings(false);
+  }
 
   return <div className="Settings flex justify-content-center gap-5">
       {/* <div className="theme-toggler">
@@ -24,8 +32,13 @@ const [openSettings, setOpenSettings] = useState(false)
         <div className="measurement-systems">
           <h4>Measurements System:</h4>
           <div className="systems grid grid-cols-3 gap-2 mt-2">
-            {Object.values(MEASUREMENT_SYSTEMS).map(system =>
-              <div key={system} className="systems cursor-pointer hover:bg-gray-100 p-2 rounded">
+          {Object.values(MEASUREMENT_SYSTEMS).map(system =>
+            <div
+              key={system} onClick={()=> changeMeasurementSystem(system) }
+                className={`systems ${system === measurementSystem
+                  ? "active"
+                  : ""}  cursor-pointer hover:bg-gray-100 p-2 rounded`}
+              >
                 {system}
               </div>
             )}
