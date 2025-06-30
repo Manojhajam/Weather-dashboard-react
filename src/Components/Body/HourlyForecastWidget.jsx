@@ -37,7 +37,7 @@ const HourlyForecastWidget = (hourlydata) => {
   weather_date.day =
     weather_date.day === now_date.day &&
       weather_date.time === now_date.time ? "Today"
-      : weather_date.time === '12:00 PM' ? weather_date.day : "";
+      : weather_date.time === '12:00 AM' ? weather_date.day : "";
 
 
   return <div className="relative widget flex flex-col items-center justify-between p-4 bg-white  rounded-2xl border border-gray-300 dark:border-gray-700 shadow-md min-w-[120px] mt-2">
@@ -52,14 +52,14 @@ const HourlyForecastWidget = (hourlydata) => {
       </div>
       <div className="temperature">
         {Math.round(temperature)}
-        {units.temperature}
+        {units.temperature}°C
       </div>
       <div className="preciption">
         {Math.round(precipitation.total)} {units.precipitation}
       </div>
       <div className="wind flex">
         <div className="speed">
-          {Math.round(wind.speed)} {units.wind_speed}
+          {Math.round(wind.speed)} {units.wind_speed}mm/h
         </div>
         <div className="dir" style={{ transform: `rotate(${-45 + wind.angle}deg)` }}>
           <i className="bi bi-send-fill" />

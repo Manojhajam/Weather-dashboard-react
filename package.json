@@ -13,8 +13,10 @@
     "@tailwindcss/vite": "^4.1.10",
     "axios": "^1.10.0",
     "bootstrap-icons": "^1.13.1",
+    "lodash.debounce": "^4.0.8",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-select-search": "^4.1.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

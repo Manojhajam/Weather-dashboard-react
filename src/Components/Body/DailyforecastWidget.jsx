@@ -1,9 +1,7 @@
-import React, {useContext} from "react";
+import React from "react";
 import Icon from "../Icon/icon";
-import WeatherContext from "../context/WeatherContext";
 
 const DailyforecastWidget = dailyData => {
-  const {units} = useContext(WeatherContext);
   const data = dailyData.data;
   const {
     day,
@@ -15,7 +13,7 @@ const DailyforecastWidget = dailyData => {
     wind,
     precipitation
   } = data;
-
+  // console.log(data);
 
   //date format
   const now_date = {
@@ -35,9 +33,10 @@ const DailyforecastWidget = dailyData => {
   };
 
   weather_date.day =
-    weather_date.day === now_date.day? "Today":weather_date.day
+    weather_date.day === now_date.day ? "Today" : weather_date.day;
 
-  return <div className="relative widget flex flex-col items-center justify-between p-4 bg-white  rounded-2xl border border-gray-300 dark:border-gray-700 shadow-md min-w-[120px] mt-2">
+  return (
+    <div className="relative widget flex flex-col items-center justify-between p-4 bg-white  rounded-2xl border border-gray-300 dark:border-gray-700 shadow-md min-w-[120px] mt-2">
       <div className="day absolute -top-6 bg-white px-2 text-sm font-semibold rounded shadow">
         {weather_date.day}
       </div>
@@ -46,18 +45,17 @@ const DailyforecastWidget = dailyData => {
       </div>
       <div className="temperature">
         <div className="max">
-          {Math.round(temperature_max)}
-          {units.temperature}
+          {Math.round(temperature_max)}°C
         </div>
         <div className="min">
-          {Math.round(temperature_min)}
-          {units.temperature}
+          {Math.round(temperature_min)}°C
         </div>
       </div>
       <div className="preciption">
-        {Math.round(precipitation.total)} {units.precipitation}
+        {Math.round(precipitation.total)} mm/h
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default DailyforecastWidget;

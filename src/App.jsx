@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Header from "./Components/Header";
 import Main from "./Components/Body";
 import "./App.css";
@@ -7,11 +7,12 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 const App = () => {
   // const { dark } = useContext(ThemeContext);
+  const [selectedCityData, setSelectedCityData] = useState();
 
   return (
     <div className="">
-      <Header />
-      <Main />
+      <Header setSelectedCityData={setSelectedCityData} />
+      <Main selectedCityData={selectedCityData} />
     </div>
   );
 };

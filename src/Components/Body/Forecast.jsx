@@ -23,4 +23,4 @@ const Forecast = ({ title, type, data }) => {
   );
 };
 
-export default Forecast;
+export default Forecast;  
