@@ -40,8 +40,8 @@ const HourlyForecastWidget = hourlydata => {
       ? "Today"
       : weather_date.time === "12:00 AM" ? weather_date.day : "";
 
-  return <div className=" hover:scale-[1.05] transition-transform duration-300 hover:shadow-2xl relative widget flex flex-col items-center justify-between p-4 bg-white  rounded-2xl border border-gray-300 dark:border-gray-700 shadow-md min-w-[120px] mt-2">
-      <div className="day absolute -top-6 bg-white px-2 text-sm font-semibold rounded shadow">
+  return <div className="hourly hover:scale-[1.05] transition-transform duration-300 hover:shadow-2xl relative widget flex flex-col items-center justify-between p-4 bg-white  rounded-2xl border border-gray-300 dark:border-gray-700 shadow-md min-w-[120px] mt-2">
+      <div className="day absolute -top-6  px-2 text-sm font-semibold rounded shadow">
         {weather_date.day}
       </div>
       <div className="time">

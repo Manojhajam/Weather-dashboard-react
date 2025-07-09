@@ -1,3 +1,5 @@
+
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import React, { useContext, useState, useEffect } from "react";
 import Place from "./Header/Place";
 import Search from "./Header/Search";
@@ -20,20 +22,21 @@ const Header = ({ setSelectedCityData, selectedCityData }) => {
 
   console.log(storedValue);
 
-  return (
-    <div className="flex justify-around items-center dark:bg-gray-400 p-5 ring shadow-xl ring-gray-900/5">
-      <Place
-        setSelectedCityData={setSelectedCityData}
-        selectedCityData={selectedCityData}
-      />
+  return <div className="header flex justify-around items-center p-5 ring ">
+      <Place setSelectedCityData={setSelectedCityData} selectedCityData={selectedCityData} />
       <Search setSelectedCityData={setSelectedCityData} />
-      <Settings setSelectedCityData={setSelectedCityData} />
+      <div className="flex gap-3">
+        <Settings setSelectedCityData={setSelectedCityData} />
 
-      {storedValue === "dark"
-        ? <button onClick={() => setStoredValue("")}>Light</button>
-        : <button onClick={() => setStoredValue("dark")}>Dark</button>}
-    </div>
-  );
+        {storedValue === "dark" ? <button onClick={() => setStoredValue("")}>
+              {/* Light */}
+              <SunIcon className="h-6 w-6 text-yellow-500" />
+            </button> : <button onClick={() => setStoredValue("dark")}>
+              {/* Dark */}
+              <MoonIcon className="h-6 w-6 text-gray-800" />
+            </button>}
+      </div>
+    </div>;
 };
 
 export default Header;
