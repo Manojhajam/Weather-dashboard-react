@@ -5,7 +5,7 @@ const Icon = ({iconNo, summary}) => {
     <img
     src={`${import.meta.env.VITE_PUBLIC_URL}/dist/weather_icons/set04/big/${iconNo}.png`}
     alt={summary}
-    className="mx-auto mb-4 w-16"
+    className="mx-auto mb-4 w-16" draggable={false}
   />
   )
 }

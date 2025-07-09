@@ -6,7 +6,7 @@ import CurrentWeather from "./Body/CurrentWeather";
 
 const Main = ({selectedCityData}) => {
   const datahourly = hourlyData[0]?.hourly?.data;
-  const datadaily = dailyData[0]?.daily?.data; 
+  const datadaily = dailyData[0]?.daily?.data;
 
   // console.log("Hourly Data:", datahourly);
   // console.log("Daily Data:", datadaily);
@@ -15,11 +15,13 @@ const Main = ({selectedCityData}) => {
 
   return (
     <div>
-      <CurrentWeather />
-      <Forecast type="hourly" title="HOURLY FORECAST" data={selectedCityData?.data||datahourly} />
-      <Forecast type="daily" title="DAILY FORECAST" data={datadaily} />
+      <CurrentWeather selectedCityData={selectedCityData}/>
+      <Forecast type="hourly" title="HOURLY FORECAST" data={selectedCityData?.hourly?.data||datahourly} />
+      <Forecast type="daily" title="DAILY FORECAST" data={selectedCityData?.daily?.data||datadaily} />
     </div>
   );
 };
 
 export default Main;
+
+

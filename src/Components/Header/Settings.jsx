@@ -1,33 +1,19 @@
+import { useState } from "react";
+import { UNITS } from "../constants";
 
-import { useContext, useState } from "react";
-import { MEASUREMENT_SYSTEMS } from "../constants";
-import WeatherContext from "../context/WeatherContext";
-
-const Settings = () => {
+const Settings = ({ setSelecselectedCityData }) => {
   const [openSettings, setOpenSettings] = useState(false);
-
-  const { measurementSystem, setMeasurementSystem } = useContext(
-    WeatherContext
-  );
+  const [measurementSystem, setMeasurementSystem] = useState("metric");
 
   const changeMeasurementSystem = system => {
     setMeasurementSystem(system);
     setOpenSettings(false);
+    // If you need to pass this to parent component, uncomment the line below
+    // setSelecselectedCityData(prev => ({ ...prev, measurementSystem: system }));
   };
 
   return (
     <div className="Settings flex justify-content-center gap-5">
-      {/* <div className="theme-toggler">
-        <div className="theme-buttons flex gap-5" onClick={toggleTheme}>
-          <div className={`light-theme-btn ${dark ? "" : "active"}`}>
-            <i className="bi bi-sun" />
-          </div>
-          <div className={`dark-theme-btn ${dark ? "active" : ""}`}>
-            <i className="bi bi-moon" />
-          </div>
-        </div>
-      </div> */}
-
       <div
         className="setting-btn flex justify-center"
         onClick={() => setOpenSettings(prevVal => !prevVal)}
@@ -41,9 +27,9 @@ const Settings = () => {
           : "opacity-0 scale-95 invisible"}`}
       >
         <div className="measurement-systems">
-          <h4>Measurements System:</h4>
+          <h4>Units System:</h4>
           <div className="systems grid grid-cols-3 gap-2 mt-2">
-            {Object.values(MEASUREMENT_SYSTEMS).map(system =>
+            {Object.keys(UNITS).map(system =>
               <div
                 key={system}
                 onClick={() => changeMeasurementSystem(system)}

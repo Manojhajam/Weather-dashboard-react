@@ -1,18 +1,16 @@
 export const DEFAULT_PLACE = {
-  name: "Biratnagar, Nepal",
+  name: "Biratnagar Nepal",
   lat: 26.4525,
   lon: 87.2718
 };
 
-
-
 export const MEASUREMENT_SYSTEMS = {
-    AUTU: 'auto',
-    METRIC: 'metric',
-    UK: 'uk',
-    US: 'us',
-    CA: 'ca'
-}
+  AUTO: "auto",
+  METRIC: "metric",
+  UK: "uk",
+  US: "us",
+  CA: "ca"
+};
 
 export const UNITS = {
   metric: {

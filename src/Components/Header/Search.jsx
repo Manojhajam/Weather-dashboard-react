@@ -4,9 +4,9 @@ import SelectSearch from "react-select-search";
 import "react-select-search/style.css";
 
 const Search = ({ setSelectedCityData }) => {
-  const [text, setText] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [openSearchResults, setOpenSearchResults] = useState(false);
+  // const [text, setText] = useState("");
+  // const [searchResults, setSearchResults] = useState([]);
+  // const [openSearchResults, setOpenSearchResults] = useState(false);
   const [selectedCity, setSelectedCity] = useState("");
 
   const onCityChange = async city => {
@@ -24,7 +24,7 @@ const Search = ({ setSelectedCityData }) => {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative">
       <div className="search-container">
         <div className="search-input relative">
           {/* <input
@@ -45,7 +45,7 @@ const Search = ({ setSelectedCityData }) => {
           />
         </div>
 
-        {openSearchResults &&
+        {/* {openSearchResults &&
           searchResults.length > 0 &&
           <div className="search-results absolute z-50 mt-2 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg max-h-60 overflow-y-auto">
             <div className="results-container">
@@ -59,7 +59,7 @@ const Search = ({ setSelectedCityData }) => {
                 </div>
               )}
             </div>
-          </div>}
+          </div>} */}
       </div>
     </div>
   );
